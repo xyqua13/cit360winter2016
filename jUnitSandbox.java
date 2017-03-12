@@ -106,4 +106,72 @@ public class jUnitSandbox {
 		String testResult = test.remove("This", "Watermellon");
 		assertEquals("Thisa",testResult);
 	}
+	
+	//Assert NUll and NOT NULL 
+	@Test
+	public void notNullGood(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertNotNull(testResult);
+	}
+	@Test
+	public void nullBad(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertNull(testResult);
+	}
+	@Test
+	public void notNullBad(){
+		testableFunctions test = new testableFunctions();
+		String testResult = null;
+		assertNotNull(testResult);
+	}
+	@Test
+	public void nullGood(){
+		testableFunctions test = new testableFunctions();
+		String testResult = null;
+		assertNull(testResult);
+	}
+	
+	
+	//Assert Not Same if the two inputs are the same then returns an error
+	@Test
+	public void notSameGood(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertNotSame(testResult,"halb");
+	}
+	@Test
+	public void notSameBad(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertNotNull(testResult,"blah");
+	}
+	
+	//assert true and falls
+	@Test
+	public void assertsTrue(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertTrue(testResult,(1+5)==6);
+	}
+	@Test
+	public void assertsTrueBad(){
+		testableFunctions test = new testableFunctions();
+		String testResult = "blah";
+		assertTrue(testResult,(1+1)==3);
+	}
+	//assert true and falls
+		@Test
+		public void assertsFlaseBad(){
+			testableFunctions test = new testableFunctions();
+			String testResult = "blah";
+			assertFalse(testResult,(1+5)==6);
+		}
+		@Test
+		public void assertsFalseGood(){
+			testableFunctions test = new testableFunctions();
+			String testResult = "blah";
+			assertFalse(testResult,(1+1)==3);
+		}
 }
